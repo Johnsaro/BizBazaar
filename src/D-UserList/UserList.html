@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin panel</title>
+
+    <link rel="stylesheet" href="Components/user-style.css">
+    <link rel="stylesheet" href="Components/Template.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding-left: 90px;
+      margin-top: 80px;
+      margin-left:160px;
+      margin-right: 20px;
+      background-color: rgb(248, 248, 248);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 300;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        margin-top: 73px;
+        margin-left: 200px;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        text-align: center;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 24px;
+        width: 30%;
+        margin-left: 180px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+  </style>
+  <body>
+    <!-- ======== Header Starts Here ======== -->
+    <header>
+      <div class="user-profile-settings">
+          <button class="btn-icon" type="button"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      </div>
+
+      <!-- <div class="middle-section">middle section here</div> -->
+      <div class="right-section">
+        <div class="profile-icon">
+          <span class="material-symbols-outlined"> person </span>
+        </div>
+        <span>Admin</span>
+      </div>
+    </header> <!-- ======== Header Starts Here ======== -->
+    
+    <!-- ======== SideBar Starts Here ======== -->
+    <nav class="main-sidebar">
+    <div class="admin-panel-side">
+      Admin 
+    </div>
+    <div class="sidebar-link" data-target="../Dashboard/Dashboard.html">
+      <span class="sidebar-icon material-symbols-outlined">
+        dashboard
+        </span>
+        <span class="sidebar-title">Dashboard</span>
+    </div>
+      <div class="sidebar-link" data-target="UserList.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          group
+          </span>
+          <span class="sidebar-title"> User List</span>
+      </div>
+
+      <div class="sidebar-link" data-target="../D-Order Catalog/Order.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          sync_alt
+          </span>
+          <span class="sidebar-title"> Orders </span>
+      </div>
+    </nav>  <!-- ======== SideBar Starts Here ======== -->
+
+
+    <main> <!-- ======== Main Content Starts Here ======== --> 
+
+      <div class="Header-title">
+        User Management
+        <button class="addUser-btn" type="button" onclick="addUser" id="addUserBtn" >Add User <i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      <!-- Preview of User Listing -->
+      <section class="main-grid"> <!-- ======== USers-Card- List Starts Here ======== -->
+        <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-2.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Alice Johnson</p>
+                  <p>@alice</p>
+                  <p>Manager</p>
+            </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+        </div>
+
+       
+      </div> <!-- ======== USers-Card- List Ends Here ======== -->
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-1.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Bob Smith</p>
+                  <p>@bob</p>
+                  <p>Sales Representative</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-4.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Carol Williams</p>
+                  <p>@carol</p>
+                  <p>Customer Support</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-3.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>David Brown</p>
+                  <p>@david</p>
+                  <p>Inventory Manager</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-7.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Emily Davis</p>
+                  <p>@emily</p>
+                  <p>Content Creator</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Frank Thompson</p>
+                  <p>@frank</p>
+                  <p>Marketing Specialist</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-8.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Grace Lee</p>
+                  <p>@grace</p>
+                  <p>Financial Officer</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-11.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Henry Walker</p>
+                  <p>@henry</p>
+                  <p>IT Support</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-10.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Isabella Martinez</p>
+                  <p>@isabella</p>
+                  <p>Vendor Manager</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-12.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Jack Harris</p>
+                  <p>@jack</p>
+                  <p>Customer</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+  
+      <div class="user-card">
+          <div class="user-info">
+              <img src="../../Image/Profile pic/profile-13.avif" alt="Profile Picture">
+              <div class="user-details">
+                  <p>Karen Adams</p>
+                  <p>@karen</p>
+                  <p>Moderator</p>
+              </div>
+          </div>
+          <div class="dots" onclick="toggleDropdown()">⋮</div>
+          <div id="dropdown" class="dropdown">
+              <a href="#">Remove</a>
+              <a href="#">Edit</a>
+              <a href="#">Assign Roles</a>
+          </div>
+      </div>
+      </section>
+      <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New User</h2>
+            <form id="addUserForm">
+                <label for="fullname">Fullname:</label>
+                <input type="text" id="fullname" name="fullname" required><br><br>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="profilePicture">Profile Picture URL:</label>
+                <input type="text" id="profilePicture" name="profilePicture" required><br><br>
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="Manager">Manager</option>
+                    <option value="Sales Representative">Sales Representative</option>
+                    <option value="Customer Support">Customer Support</option>
+                    <option value="Content Creator">Content Creator</option>
+                    <option value="Inventory Manager">Inventory Manager</option>
+                    <option value="Marketing Specialist">Marketing Specialist</option>
+                    <option value="Financial Officer">Financial Officer</option>
+                    <option value="IT Support">IT Support</option>
+                    <option value="Vendor Manager">Vendor Manager</option>
+                    <option value="Moderator">Moderator</option>
+                </select><br><br>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+    </div>
+    </main>
+    <script src="scripts/AddnewUsers.js"></script>
+    <script>
+        // User-card-list Dropdown function
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  }
+    </script>
+  </body>
+</html>

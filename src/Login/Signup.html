@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+
+    <link rel="stylesheet" href="Components/general.css" />
+    <link rel="stylesheet" href="Components/Login style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ========= Container Starts here ========= -->
+    <div class="container-form">
+      <h1>Login to Your Account</h1>
+
+      <!-- ========= Register Account options Start =========-->
+      <div class="Accounts-option">
+        <div class="facebook-icon-container">
+          <span class="facebook-icon material-symbols-outlined"> sick </span>
+        </div>
+
+        <div class="instagram-icon-container">
+          <span class="instagram-icon material-symbols-outlined"> face_4 </span>
+        </div>
+
+        <div class="gmail-icon-container">
+          <span class="gmail-icon material-symbols-outlined">
+            sentiment_extremely_dissatisfied
+          </span>
+        </div>
+      </div>
+      <!-- ========= Register Account options End =========-->
+
+      <p>or use your email for registration</p>
+
+      <!-- ========= Login input Start Here -->
+      <div class="field-group">
+        <div class="username-input-container">
+          <input class="username-input" type="text" placeholder="Enter Name" />
+          <div class="username-icon">
+            <span class="material-symbols-outlined"> person </span>
+          </div>
+        </div>
+
+        <div class="password-input-container">
+          <input
+            class="password-input"
+            type="password"
+            placeholder="Enter Password"
+          />
+          <div class="password-icon">
+            <span class="material-symbols-outlined"> lock </span>
+          </div>
+        </div>
+
+        <div class="number-input-container">
+          <input type="text" placeholder="+63 000 000 000" />
+          <div class="number-icon">
+            <span class="material-symbols-outlined"> dialpad </span>
+          </div>
+        </div>
+
+        <!-- ========= Login input Start Here -->
+
+        <button
+          class="signup-btn"
+          type="button"
+          onclick="RedirectToDashboard()"
+        >
+          Login
+        </button>
+        <!-- ========= Login BUtton End Here -->
+      </div>
+    </div>
+    <!-- ========= Container Ends here ========= -->
+
+    <!-- Login Form Function link-->
+    <script src="FormValidation.js"></script>
+  </body>
+</html>

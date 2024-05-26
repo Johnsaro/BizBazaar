@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: #2d3250;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: Raleway;
+  font-weight: 400;
+}
