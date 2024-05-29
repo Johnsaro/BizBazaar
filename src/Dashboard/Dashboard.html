@@ -12,140 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-    <link rel="stylesheet" href="Components/main-dashboard-style.css" />
-    <style>
-      body {
-        margin: 0;
-        height: 3000px;
-      }
-      
-      span {
-        color: white;
-        font-size: 24px;
-        padding-top: 4px;
-        padding-right: 4px;
-        margin-right: 5px;
-      }
-      
-      header {
-        height: 64px;
-        background-color: rgb(30, 136, 229);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4px 16px;
-      
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-      }
-      
-      .user-profile-settings {
-        /*admin panel sidebar*/
-        height: 40px;
-        width: 120px;
-        display: flex;
-        justify-content: center;
-      }
-      
-      .app-logo {
-        width: 36px;
-      }
-      
-      .btn-icon {
-        color: rgb(255, 255, 255);
-        background-color: rgb(30, 136, 229);
-        height: 40px;
-        width: 45px;
-        border: none;
-        border-radius: 30px;
-      
-        font-size: 2em;
-        cursor: pointer;
-      }
-      
-      .logo {
-        position: absolute;
-        top: 0;
-      }
-      
-      .middle-section {
-        height: 40px;
-        width: 80px;
-        width: 300px;
-        background-color: aqua;
-      }
-      .right-section {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        text-align: center;
-        height: 40px;
-        width: 120px;
-      }
-      .profile-icon {
-        color: white;
-        height: 22px;
-        padding-top: 2px;
-        margin-left: 12px;
-      }
-      
-      .admin-panel-side {
-        font-family: "Poppins", sans-serif;
-        color: black;
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
-        padding-top: 12px;
-      }
-      
-      .main-sidebar {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        top: 72px;
-        /* background-color: rgb(238, 171, 171); */
-        width: 200px;
-        z-index: 200;
-        padding-top: 5px;
-        border-right-width: 1px;
-        border-right-style: solid;
-        border-right-color: rgb(237, 227, 213);
-        background-color: white;
-      }
-      .sidebar-link {
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-      
-        margin: 20px;
-        transition: backgroud-color 0.15s;
-      }
-      
-      .sidebar-link:hover {
-        background-color: rgb(243, 234, 223);
-      }
-      
-      .sidebar-icon {
-        font-size: 30px;
-        margin-right: 6px;
-        color: black;
-      }
-      
-      .sidebar-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-        padding-top: 7px;
-        color: black;
-      }
-      
-      
-    </style>
+    <link rel="stylesheet" href="Components/Template.css" />
   </head>
   <body>
     <header>
@@ -184,7 +51,21 @@
         <span class="sidebar-icon material-symbols-outlined">
             sync_alt
             </span>
-          <span class="sidebar-title"> Orders</span>
+          <span class="sidebar-title">Orders</span>
+      </div>
+
+      <div class="sidebar-link" data-target="../D-Products/Products.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          shopping_bag
+          </span>
+          <span class="sidebar-title">Products</span>
+      </div>
+
+      <div class="sidebar-link" data-target="../D-Analytics/Analytics.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          monitoring
+          </span>
+          <span class="sidebar-title">Analytics</span>
       </div>
     </nav>
 
