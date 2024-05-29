@@ -1,11 +1,72 @@
 .search-filter-container {
   margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.search-bar,
+.filter-section {
+  direction: flex;
+  justify-content: center;
+}
+
+.dropdown-section {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  justify-content: right;
+}
+
 .filter-dropdown {
-  border-radius: 16px;
-  border-width: 1px solid rgb(160, 156, 156);
+  height: 26px;
+  margin-right: 20px;
+  padding-left: 16px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 20px;
+  border: 1px solid rgb(192, 192, 192);
+}
+.search-bar {
+  justify-content: center;
+  background-color: lightblue;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 20px;
+  padding-left: 20px;
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar::placeholder {
+  padding: 8px;
+  font-family: "Poppins", sans-serif;
+  color: #23a3ff;
+  font-style: italic;
+}
+
+.error {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.filter-btn {
+  height: 30px;
+  width: 40px;
+  border-radius: 20px;
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  width: 40px;
+}
+
+.filter-btn:hover {
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-icon {
+  color: black;
+  padding: 1px;
+  font-size: 8px;
 }
 
 .filter-dropdown {
@@ -13,14 +74,23 @@
 }
 
 .export-btn {
-  margin-left: 50%;
-  border: none;
+  height: 26px;
   border-radius: 8px;
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
   background-color: rgb(12, 166, 255);
   color: #f1f1f1;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.28s, color 0.15s;
 }
 
-.order-table {
+.export-btn:hover {
+  background-color: #3ace69;
+  color: black;
+}
+
+.data-table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
@@ -28,27 +98,27 @@
   text-align: left;
 }
 
-.order-table caption {
+.data-table caption {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.order-table th,
-.order-table td {
+.data-table th,
+.data-table td {
   padding: 12px;
   border: 1px solid #ddd;
 }
 
-.order-table th {
+.data-table th {
   background-color: #f2f2f2;
 }
 
-.order-table tr:nth-child(even) {
+.data-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.order-table tr:hover {
+.data-table tr:hover {
   background-color: #f1f1f1;
 }
 
