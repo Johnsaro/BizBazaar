@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin panel</title>
+    <title>user Management</title>
 
     <link rel="stylesheet" href="Components/user-style.css">
     <link rel="stylesheet" href="Components/Template.css" />
@@ -14,57 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-  <style>
-    body {
-      margin: 0;
-      padding-left: 90px;
-      margin-top: 80px;
-      margin-left:160px;
-      margin-right: 20px;
-      background-color: rgb(248, 248, 248);
-      font-family: "Poppins", sans-serif;
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 300;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        margin-top: 73px;
-        margin-left: 200px;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
-    }
-
-    .modal-content {
-        text-align: center;
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        border-radius: 24px;
-        width: 30%;
-        margin-left: 180px;
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-  </style>
   <body>
     <!-- ======== Header Starts Here ======== -->
     <header>
@@ -106,7 +55,21 @@
           </span>
           <span class="sidebar-title"> Orders </span>
       </div>
-    </nav>  <!-- ======== SideBar Starts Here ======== -->
+
+      <div class="sidebar-link" data-target="../D-Products/Products.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          shopping_bag
+          </span>
+          <span class="sidebar-title">Products</span>
+      </div>
+
+      <div class="sidebar-link" data-target="../D-Analytics/Analytics.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          monitoring
+          </span>
+          <span class="sidebar-title">Analytics</span>
+      </div>
+    </nav>  <!-- ======== SideBar Ends Here ======== -->
 
 
     <main> <!-- ======== Main Content Starts Here ======== --> 
