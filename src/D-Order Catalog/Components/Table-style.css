@@ -1,0 +1,73 @@
+.search-filter-container {
+  margin-top: 20px;
+}
+
+.search-bar,
+.filter-dropdown {
+  border-radius: 16px;
+  border-width: 1px solid rgb(160, 156, 156);
+}
+
+.filter-dropdown {
+  cursor: pointer;
+}
+
+.export-btn {
+  margin-left: 50%;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(12, 166, 255);
+  color: #f1f1f1;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.order-table caption {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.order-table th {
+  background-color: #f2f2f2;
+}
+
+.order-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.order-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Pagination links */
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
