@@ -16,59 +16,45 @@
   </head>
   <body>
     <header>
-      <div class="user-profile-settings">
-          <button class="btn-icon" type="button"><i class="fa-solid fa-bars"></i></button>
-      </div>
-      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-      <!-- <div class="middle-section">middle section here</div> -->
-      <div class="right-section">
-        <div class="profile-icon">
-          <span class="material-symbols-outlined"> person </span>
-        </div>
-        <span>Admin</span>
-      </div>
-    </header>
-
-    <nav class="main-sidebar">
-    <div class="admin-panel-side">
-      Admin 
-    </div>
-    <div class="sidebar-link" data-target="Dashboard.html">
-      <span class="sidebar-icon material-symbols-outlined">
-        dashboard
-        </span>
-        <span class="sidebar-title">Dashboard</span>
-    </div>
-      <div class="sidebar-link" data-target="../D-UserList/UserList.html">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <span class="sidebar-icon material-symbols-outlined">
+          dashboard
+          </span>
+        <a href="Dashboard.html">Dashboard</a>
         <span class="sidebar-icon material-symbols-outlined">
           group
           </span>
-          <span class="sidebar-title"> User List</span>
-      </div>
-
-      <div class="sidebar-link" data-target="../D-Order Catalog/Order.html">
+        <a href="../D-UserList/UserList.html">User List</a>
         <span class="sidebar-icon material-symbols-outlined">
             sync_alt
-            </span>
-          <span class="sidebar-title">Orders</span>
-      </div>
-
-      <div class="sidebar-link" data-target="../D-Products/Products.html">
+          </span>
+        <a href="../D-Order Catalog/Order.html">Orders</a>
         <span class="sidebar-icon material-symbols-outlined">
           shopping_bag
           </span>
-          <span class="sidebar-title">Products</span>
-      </div>
-
-      <div class="sidebar-link" data-target="../D-Analytics/Analytics.html">
+        <a href="../D-Products/Products.html">Products</a>
         <span class="sidebar-icon material-symbols-outlined">
           monitoring
           </span>
-          <span class="sidebar-title">Analytics</span>
-      </div>
-    </nav>
+        <a href="../D-Analytics/Analytics.html">Analytics</a>
+      </div> 
 
+      <div class="right-section">
+        <div class="profile-icon" id="topNav">
+          <span class="admin-icon material-symbols-outlined"> person </span>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Admin</button>
+            <div class="dropdown-content">
+              <a href="#">Report</a>
+              <a href="#">Change Password</a>
+              <a href="../Login/Signup.html">Log out</a>
+            </div>
+      </div>
+    </header>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".sidebar-link").forEach((link) => {
@@ -80,6 +66,16 @@
           });
         });
       });
+
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+        console.log("Navbar is Open")
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        console.log("Navbar is Close")
+      }
     </script>
   </body>
 </html>
