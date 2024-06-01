@@ -156,6 +156,7 @@
     </div>
 
     <div class="dropdown-section">
+      <button onclick="sortById()">Sort</button>
       <select class="filter-dropdown" id="status-filter">
         <option value="">Status</option>
         <option value="shipped">Shipped</option>
@@ -172,7 +173,9 @@
     <button class="export-btn" onclick="exportToExcel()">Export</button>
     
 </div>
+
 <div id="tableContainer"></div>
+
   <p id="errorMessage" class="error"></p>
         <div class="pagination">
           <a href="#">&laquo;</a>

@@ -277,7 +277,7 @@ const filterTable = () => {
 document.addEventListener("DOMContentLoaded", renderTable);
 
 //
-function sortTable() {
+function sortById() {
   const table = document.getElementById("dataTable");
   let switching = true;
 
