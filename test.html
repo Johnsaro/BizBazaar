@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React 18 Example</title>
+    <title>React Sidebar</title>
+    <link
+      rel="stylesheet"
+      href="src/Dashboard/components/Dashboard-Template.css"
+    />
   </head>
   <body>
     <div id="root"></div>
@@ -24,18 +28,61 @@
       const { useState } = React;
 
       function App() {
-        const [count, setCount] = useState(0);
-        return (
-          <div>
-            <h1>Hello, React 18!</h1>
-            <p>Count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>Increase</button>
-          </div>
+        const [isOpen, setIsOpen] = useState(false);
+
+        const openNav = () => {
+          setIsOpen(true);
+          console.log("Navbar is Open");
+        };
+
+        const closeNav = () => {
+          setIsOpen(false);
+          console.log("Navbar is Close");
+        };
+
+        return React.createElement(
+          "div",
+          null,
+          React.createElement(
+            "div",
+            {
+              id: "mySidenav",
+              className: "sidenav",
+              style: { width: isOpen ? "200px" : "0" },
+            },
+            React.createElement(
+              "a",
+              { href: "#", className: "closebtn", onClick: closeNav },
+              "×"
+            ),
+            React.createElement("a", { href: "#" }, "About"),
+            React.createElement("a", { href: "#" }, "Services"),
+            React.createElement("a", { href: "#" }, "Clients"),
+            React.createElement("a", { href: "#" }, "Contact")
+          ),
+          React.createElement(
+            "div",
+            { id: "main" },
+            React.createElement(
+              "span",
+              {
+                style: { fontSize: "30px", cursor: "pointer" },
+                onClick: openNav,
+              },
+              "☰ open"
+            ),
+            React.createElement("h2", null, "Hello, World!"),
+            React.createElement(
+              "p",
+              null,
+              "Click on the hamburger menu to open the sidebar, and click on the close button to close it."
+            )
+          )
         );
       }
 
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<App />);
+      root.render(React.createElement(App));
     </script>
   </body>
 </html>
