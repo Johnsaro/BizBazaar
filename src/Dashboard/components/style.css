@@ -190,6 +190,7 @@ canvas {
 .NewUser {
   display: flex;
   flex-direction: column;
+  height: 208px;
   margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -198,6 +199,25 @@ canvas {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s,
     background-color 0.3s;
+}
+
+.NewUser img {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.NewUser,
+.user-info {
+  align-items: center;
+}
+
+.NewUser .user-details {
+  flex: 1;
 }
 
 .NewUser:hover {
