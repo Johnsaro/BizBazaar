@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-   
+    <title>Products</title>
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,36 +11,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Components/Template.css">
+    <link rel="stylesheet" href="Components/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   </head>
-    <link rel="stylesheet" href="Components/Dashboard-template.css" />
-  </head>
+
   <body>
     <header>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <span class="sidebar-icon material-symbols-outlined">
-          dashboard
-          </span>
-        <a href="Dashboard.html">Dashboard</a>
-        <span class="sidebar-icon material-symbols-outlined">
-          group
-          </span>
-        <a href="../D-UserList/UserList.html">User List</a>
-        <span class="sidebar-icon material-symbols-outlined">
-            sync_alt
-          </span>
-        <a href="../D-Order Catalog/Order.html">Orders</a>
-        <span class="sidebar-icon material-symbols-outlined">
-          shopping_bag
-          </span>
-        <a href="../D-Products/Products.html">Products</a>
-        <span class="sidebar-icon material-symbols-outlined">
-          monitoring
-          </span>
-        <a href="../D-Analytics/Analytics.html">Analytics</a>
-      </div> 
+      <div class="user-profile-settings">
+          <button class="btn-icon" type="button"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      </div>
 
       <div class="right-section">
         <div class="profile-icon" id="topNav">
@@ -57,18 +39,111 @@
       </div>
     </header>
 
-    <div id="root"></div>
+    <nav class="main-sidebar">
+    <div class="admin-panel-side">
+      Admin 
+    </div>
+    <div class="sidebar-link" data-target="../Dashboard/Dashboard.html">
+      <span class="sidebar-icon material-symbols-outlined">
+        dashboard
+        </span>
+        <span class="sidebar-title">Dashboard</span>
+    </div>
+      <div class="sidebar-link" data-target="../D-UserList/UserList.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          group
+          </span>
+          <span class="sidebar-title"> User List</span>
+      </div>
 
-    <!-- main script -->
-    <script src="scripts/main.js"></script>
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <div class="sidebar-link" data-target="../D-Order Catalog/Order.html">
+        <span class="sidebar-icon material-symbols-outlined">
+            sync_alt
+            </span>
+          <span class="sidebar-title">Orders</span>
+      </div>
 
-    <script type="text/babel" src="/my-app/src/App.js"></script>
+      <div class="sidebar-link" data-target="../D-Products/Products.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          shopping_bag
+          </span>
+          <span class="sidebar-title">Products</span>
+      </div>
 
-   
+      <div class="sidebar-link" data-target="../D-Analytics/Analytics.html">
+        <span class="sidebar-icon material-symbols-outlined">
+          monitoring
+          </span>
+          <span class="sidebar-title">Analytics</span>
+      </div>
+    </nav>
+
+
+    <main>
+      <h2>Welcome back, Admin</h2>
+      <div class="status">
+
+          <div class="cards">
+              <div class="class="card-title"">
+                  <h3>Total Sales</h3>
+                  <span id="saleValue">
+                    + $261
+                  </span>
+              </div>
+              <div >
+                <label for="date">Choose a date:</label>
+                <select name="date" id="date">
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+                </select>
+              </div>
+          </div>
+
+          <div class="cards">
+              <div class="card-title">
+                  <h3>New Orders</h3>
+                  <span id="newOrders">150</span>
+              </div>
+          </div>
+
+          <div class="cards">
+              <div class="card-title">
+                  <h3>Customer Growth</h3>
+                  <p><span id="customerGrowth">+25 new customers</span></p>
+                  <p>Time Period: This Month</p>
+              </div>
+          </div>
+
+          <div class="cards">
+              <div class="card-title">
+                  <h3>Low Stock Alerts</h3>
+                  <ul id="lowStockAlerts">
+                    <li class="highlight-warning">Product 1: Red T-Shirt - 5 units left</li>
+                    <li class="highlight-warning">Product 2: Blue Jeans - 2 units left</li>
+                    <li class="highlight-negative">Product 3: Black Shoes - 1 unit left</li>
+                </ul>
+              </div>
+          </div>
+
+          <div class="container">
+            <h2>Sale Trends</h2>
+            <label for="salesPeriod">Choose a sales period:</label>
+            <select name="salesPeriod" id="salesPeriod">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <!-- Add other options if needed -->
+            </select>
+             <ul id="salesTrends"></ul>
+        <canvas id="salesChart" width="400" height="200"></canvas>
+        </div>
+          
+      </div>
+    </main>
     
-  </body>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/status.js"></script>
+
+    
+    </body>
 </html>

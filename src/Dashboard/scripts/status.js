@@ -1,3 +1,6 @@
+const ctx = document.getElementById("salesChart").getContext("2d");
+let salesChart;
+
 document.getElementById("date").addEventListener("change", function () {
   const selectedValue = this.value;
   let salesValue;
@@ -28,6 +31,7 @@ document.getElementById("date").addEventListener("change", function () {
   saleValueElement.textContent = `${sign} ${salesValue}`;
   saleValueElement.style.color = color; // Apply color
 });
+
 document.getElementById("salesPeriod").addEventListener("change", function () {
   const selectedPeriod = this.value;
   const salesTrends = document.getElementById("salesTrends");
@@ -52,6 +56,7 @@ document.getElementById("salesPeriod").addEventListener("change", function () {
     ];
   }
 
+  // Populate salesTrends list
   for (let i = 0; i < salesData.length; i++) {
     const listItem = document.createElement("li");
     if (i > 0) {
@@ -69,6 +74,38 @@ document.getElementById("salesPeriod").addEventListener("change", function () {
     }
     salesTrends.appendChild(listItem);
   }
+
+  // Prepare data for Chart.js
+  const labels = salesData.map((sale) => sale.date || sale.week);
+  const data = salesData.map((sale) => sale.value);
+
+  if (salesChart) {
+    salesChart.destroy();
+  }
+
+  salesChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Sales",
+          data: data,
+          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          fill: true,
+          tension: 0.1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
 });
 
 // Trigger change event to display the default sales period data (Daily)

@@ -1,0 +1,171 @@
+.right-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  height: 40px;
+  width: 120px;
+  margin-right: 20px;
+}
+
+admin-icon {
+  font-size: 30px;
+  margin-right: 2px;
+  color: white;
+}
+
+.dropbtn {
+  background-color: rgb(30, 136, 229);
+  color: white;
+  font-size: 27px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-right: 20px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: flex;
+  justify-content: left;
+  color: black;
+  padding: 12px 13px;
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(37, 147, 243);
+}
+
+h3 {
+  color: #5dade2;
+}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  height: auto;
+  margin: auto;
+  gap: 13px;
+}
+.cards {
+  display: grid;
+  grid-column: auto;
+  max-width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: white;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s,
+    background-color 0.3s;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+#saleValue,
+#newOrders,
+#customerGrowth {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  color: black;
+  font-size: 30px;
+}
+
+#salesTrends,
+#lowStockAlerts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+#salesTrends li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.highlight-positive {
+  color: green;
+}
+.highlight-negative {
+  color: red;
+}
+.highlight-warning {
+  color: orange;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#salesTrends {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 45%;
+}
+#salesTrends li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+#salesChartContainer {
+  width: 50%;
+}
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
