@@ -103,14 +103,16 @@
           <div class="cards">
               <div class="card-title">
                   <h3>New Orders</h3>
-                  <span id="newOrders">150</span>
+                  <span id="newOrders">150</span><br>
+                  <h3>Pending Orders</h3>
+                  <span id="pendingOrders">20</span>
               </div>
           </div>
 
           <div class="cards">
               <div class="card-title">
                   <h3>Customer Growth</h3>
-                  <p><span id="customerGrowth">+25 new customers</span></p>
+                  <p ><span  id="customerGrowth">+25 new customers</span></p>
                   <p>Time Period: This Month</p>
               </div>
           </div>
@@ -124,6 +126,7 @@
                     <li class="highlight-negative">Product 3: Black Shoes - 1 unit left</li>
                 </ul>
               </div>
+              <a href="#">Inventory</a>
           </div>
 
           <div class="container">
@@ -135,10 +138,45 @@
                 <!-- Add other options if needed -->
             </select>
              <ul id="salesTrends"></ul>
-        <canvas id="salesChart" width="400" height="200"></canvas>
-        </div>
-          
+             <canvas id="salesChart" width="400" height="200"></canvas>
+          </div>   
+
+          <div class="userContainer"> 
+            <div class="NewUser">
+              <img src="" alt="Image here">
+              <div class="UserInfo">
+                <span id="UserId">John Doe</span>
+                <p>New Hire</p>
+                <p>Last seen 1 Day Ago</p>
+              </div>
+            </div>
+
+            <div class="NewUser">
+              <img src="../../Image/Profile pic/profile-2.avif pic/" alt="Profile Picture">
+              <div class="UserInfo">
+                <span id="UserId">Alice Johnson</span>
+                <p>Manager</p>
+                <p>Last seen 3 Day Ago</p>
+              </div>
+            </div>
+
+            <div class="NewUser">
+              <img src="" alt="Image here">
+              <div class="UserInfo">
+                <span id="UserId">Carol Williams</span>
+                <p>Customer Support</p>
+                <p>Last seen a minute Ago</p>
+              </div>
+            </div>
+
+            <div>
+              <button class="addUser-btn" type="button" onclick="addUser" id="addUserBtn" >Add User</button>
+            </div>
+
+          </div>
       </div>
+
+
     </main>
     
     <script src="scripts/main.js"></script>
